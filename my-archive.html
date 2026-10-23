@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <title>My Archive — AFTERCASE</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/layout.js"></script>
+    <script type="module" src="scripts/my-archive.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div id="site-header"></div>
+    <main id="main-content">
+      <section class="page-intro" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR PRIVATE COLLECTION</p>
+        <h1 id="page-title">My Archive</h1>
+        <p class="intro-copy">Return to cases you are watching, researching, or have completed, along with the notes you have saved.</p>
+      </section>
+      <div id="my-archive-content" aria-live="polite" aria-busy="true">
+        <p class="loading-message">Opening your archive…</p>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

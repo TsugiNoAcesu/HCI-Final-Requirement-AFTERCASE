@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <title>Add Case — AFTERCASE</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/layout.js"></script>
+    <script type="module" src="scripts/case-form.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div id="site-header"></div>
+    <main id="main-content">
+      <a id="cancel-link" class="back-link" href="index.html">← Explore Cases</a>
+      <section class="page-intro form-intro" aria-labelledby="form-title">
+        <p class="eyebrow">YOUR ARCHIVE</p>
+        <h1 id="form-title">Add Case</h1>
+        <p class="intro-copy">Record a real-world case. Leave optional details blank until you can verify them.</p>
+      </section>
+
+      <form id="case-form" class="case-form" novalidate>
+        <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+        <section id="case-prep" class="form-section case-prep" aria-labelledby="case-prep-title">
+          <h2 id="case-prep-title">Prepare from a file or transcript</h2>
+          <p class="muted">Choose a TXT, Markdown, VTT, or SRT file, or paste transcript text. AFTERCASE reads it in this browser and suggests values only when it finds clearly labeled fields.</p>
+          <div class="prep-inputs">
+            <label class="filter-field" for="source-file">Source file
+              <input id="source-file" type="file" accept=".txt,.md,.markdown,.vtt,.srt,text/plain,text/markdown,text/vtt,application/x-subrip">
+            </label>
+            <label class="filter-field" for="source-text">Or paste source text
+            <textarea id="source-text" rows="7" maxlength="2000000" placeholder="Case title: …&#10;Case number: …&#10;My progress: Not Started&#10;Real-world status: …&#10;Overview: …"></textarea>
+            </label>
+          </div>
+          <div class="prep-actions">
+            <button id="prepare-case" class="secondary-button" type="button">Find labeled fields</button>
+            <button id="clear-source" class="text-button" type="button">Clear source text</button>
+          </div>
+          <p id="prep-message" class="form-message" role="status" aria-live="polite"></p>
+          <div id="prep-preview" class="prep-preview" aria-live="polite" hidden></div>
+        </section>
+        <fieldset class="form-section">
+          <legend>Case details</legend>
+          <div class="form-grid">
+            <label>Case title <input name="title" required maxlength="160" autocomplete="off"></label>
+            <label>Case number <input name="caseNumber" required maxlength="40" autocomplete="off"></label>
+            <label>My progress
+              <select name="myProgress" required><option>Not Started</option><option>In Progress</option><option>Completed</option></select>
+            </label>
+            <label id="world-status-field">Real-world status
+              <select name="realWorldStatus"><option value="">Choose a status</option><option>Solved</option><option>Unsolved</option><option>Ongoing</option><option>Unknown or disputed</option></select>
+            </label>
+            <label>Location <input name="location" maxlength="180" autocomplete="off"></label>
+            <label>Categories <input name="categories" required placeholder="Separate categories with commas" autocomplete="off"></label>
+            <label>Keywords <input name="keywords" placeholder="Separate keywords with commas" autocomplete="off"></label>
+            <label class="form-wide">Image URL <input name="imageUrl" type="url" placeholder="https://…" autocomplete="url"></label>
+            <label class="form-wide">Overview <textarea name="summary" required rows="4" maxlength="3000"></textarea></label>
+          </div>
+        </fieldset>
+
+        <section class="form-section record-section" aria-labelledby="timeline-title">
+          <div class="record-section-heading"><div><h2 id="timeline-title">Timeline</h2><p class="muted">Add dated events or sequence notes.</p></div><button class="secondary-button" type="button" data-add-record="timelineEvents">Add event</button></div>
+          <div class="record-list" data-record-list="timelineEvents"></div>
+        </section>
+        <section class="form-section record-section" aria-labelledby="people-title">
+          <div class="record-section-heading"><div><h2 id="people-title">People Involved</h2><p class="muted">Record names, roles, and relevant details.</p></div><button class="secondary-button" type="button" data-add-record="people">Add person</button></div>
+          <div class="record-list" data-record-list="people"></div>
+        </section>
+        <section class="form-section record-section" aria-labelledby="evidence-title">
+          <div class="record-section-heading"><div><h2 id="evidence-title">Evidence and Important Details</h2><p class="muted">Label the reliability of every item.</p></div><button class="secondary-button" type="button" data-add-record="evidenceItems">Add item</button></div>
+          <div class="record-list" data-record-list="evidenceItems"></div>
+        </section>
+        <section class="form-section record-section" aria-labelledby="sources-title">
+          <div class="record-section-heading"><div><h2 id="sources-title">Sources</h2><p class="muted">Use normal links to the original material.</p></div><button class="secondary-button" type="button" data-add-record="sources">Add source</button></div>
+          <div class="record-list" data-record-list="sources"></div>
+        </section>
+        <section class="form-section record-section" aria-labelledby="notes-title">
+          <div class="record-section-heading"><div><h2 id="notes-title">Personal Notes</h2><p class="muted">Your notes are stored only in this browser.</p></div><button class="secondary-button" type="button" data-add-record="personalNotes">Add note</button></div>
+          <div class="record-list" data-record-list="personalNotes"></div>
+        </section>
+
+        <div class="form-actions"><a id="cancel-bottom" class="text-button" href="index.html">Cancel</a><button class="primary-button" type="submit">Save Case</button></div>
+      </form>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

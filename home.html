@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <title>Dashboard — AFTERCASE</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/layout.js"></script>
+    <script type="module" src="scripts/home.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div id="site-header"></div>
+    <main id="main-content">
+      <section class="dashboard-banner" aria-labelledby="dashboard-title">
+        <div>
+          <p class="eyebrow">PRIVATE ARCHIVE / DASHBOARD</p>
+          <h1 id="dashboard-title">Good day, <span id="dashboard-name">Investigator</span>.</h1>
+          <p id="dashboard-date" class="muted"></p>
+        </div>
+        <div class="dashboard-mark" aria-hidden="true"><span>AFTERCASE</span><strong>001</strong><small>OPEN FILES · RETURN ANYTIME</small></div>
+      </section>
+
+      <section id="demo-banner" class="demo-banner" aria-label="Sample case notice" hidden>
+        <div><strong>Sample cases for the prototype.</strong><span> These records use invented people and places.</span></div>
+        <button id="remove-demo-cases" class="text-button" type="button">Remove them</button>
+      </section>
+
+      <section class="dashboard-stats" aria-label="Archive overview">
+        <article class="stat-card"><p class="eyebrow">TOTAL CASES</p><strong id="stat-total">—</strong><span>in your archive</span></article>
+        <article class="stat-card"><p class="eyebrow">IN PROGRESS</p><strong id="stat-progress">—</strong><span>being investigated</span></article>
+        <article class="stat-card"><p class="eyebrow">COMPLETED</p><strong id="stat-completed">—</strong><span>research finished</span></article>
+        <article class="stat-card"><p class="eyebrow">WATCHLIST</p><strong id="stat-watchlist">—</strong><span>saved to return to</span></article>
+      </section>
+
+      <section class="quick-actions" aria-labelledby="quick-actions-title">
+        <div class="section-heading"><div><p class="eyebrow">START HERE</p><h2 id="quick-actions-title">Quick actions</h2></div></div>
+        <div class="quick-action-links">
+          <a class="primary-button" href="case-form.html">＋ Add Case</a>
+          <a class="secondary-button" href="index.html">Explore Cases</a>
+          <a class="secondary-button" href="my-archive.html">Open My Archive</a>
+        </div>
+      </section>
+
+      <section class="dashboard-section" aria-labelledby="continue-title">
+        <div class="section-heading"><div><p class="eyebrow">PICK UP THE THREAD</p><h2 id="continue-title">Continue investigating</h2></div><a class="text-link" href="index.html">All cases →</a></div>
+        <div id="continue-list" class="continue-grid" aria-live="polite" aria-busy="true"></div>
+      </section>
+
+      <section class="dashboard-section dashboard-recent" aria-labelledby="recent-title">
+        <div class="section-heading"><div><p class="eyebrow">LATEST FILES</p><h2 id="recent-title">Recently added</h2></div><a class="text-link" href="index.html">Explore all →</a></div>
+        <div id="recent-list" class="recent-list" aria-live="polite" aria-busy="true"></div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

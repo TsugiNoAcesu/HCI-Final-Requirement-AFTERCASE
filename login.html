@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <title>Sign in — AFTERCASE</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/login.js"></script>
+  </head>
+  <body class="login-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content" class="login-shell">
+      <section class="login-brand-panel" aria-label="AFTERCASE private archive">
+        <div class="login-brand-top"><span class="login-brand-mark">A.</span><span>AFTERCASE <small>/ PRIVATE ARCHIVE</small></span></div>
+        <div class="login-brand-message"><p class="eyebrow">FIELD NOTES · OPEN FILES</p><p>Some stories<br>stay open.</p></div>
+        <div class="login-file-stamp" aria-hidden="true"><span>CASE REGISTER</span><strong>001</strong><span>EVIDENCE · RECORD · RETURN</span></div>
+      </section>
+      <section class="login-panel" aria-labelledby="login-title">
+        <div class="login-card">
+          <p class="eyebrow">SIGN IN</p>
+          <h1 id="login-title">Return to your archive.</h1>
+          <p class="login-intro">Keep the facts, sources, and questions together.</p>
+          <form id="login-form" novalidate>
+            <label class="login-field" for="username">Username
+              <input id="username" name="username" type="text" autocomplete="username" aria-describedby="username-error" required>
+              <span id="username-error" class="field-error" aria-live="polite"></span>
+            </label>
+            <label class="login-field" for="password">Password
+              <span class="password-control"><input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="password-error" required><button id="toggle-password" class="text-button password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button></span>
+              <span id="password-error" class="field-error" aria-live="polite"></span>
+            </label>
+            <label class="remember-field" for="keep-signed-in"><input id="keep-signed-in" type="checkbox"> Keep me signed in on this device</label>
+            <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+            <button id="sign-in" class="primary-button login-submit" type="submit">Sign in</button>
+            <button id="continue-guest" class="text-button guest-submit" type="button">Continue as guest</button>
+          </form>
+          <p class="login-small-print">Prototype sign-in. No account is created and no password is stored.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
